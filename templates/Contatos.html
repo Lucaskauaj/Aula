@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block titulo %}Contatos{% endblock %}
+
+{% block conteudo %}
+  <h2>Lista de Contatos</h2>
+  <p class="small">A lista abaixo vem do Python — observe o número automático com <code>loop.index</code>.</p>
+
+  <ul>
+    {% for i in contatos %}
+      <li>{{ loop.index }} - <strong>{{ i.nome }}</strong> — <span class="small">{{ i.email }}</span></li>
+    {% else %}
+      <li>Nenhum contato encontrado.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
